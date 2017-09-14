@@ -4,7 +4,8 @@
     "pages/logs/logs",
     "pages/swiper_one/swiper_one",
     "pages/nav/nav",
-    "pages/input/input"
+    "pages/input/input",
+    "pages/input_shili/input_shili"
   ],
   "window": {
     "backgroundTextStyle": "light",
