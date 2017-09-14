@@ -1,0 +1,32 @@
+<!--index.wxml-->
+<view class="container">
+  <p catchtap="fff">静态资源引用</p>
+</view>
+<view class="section">
+  <view class="section__title">vertical scroll</view>
+  <scroll-view scroll-y style="height: 750rpx;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+    <view id="green" class="scroll-view-item bc_green" style="background-color: green;height: 400rpx;"></view>
+    <view id="red"  class="scroll-view-item bc_red" style="background-color: red;height: 400rpx;"></view>
+    <view id="yellow" class="scroll-view-item bc_yellow" style="background-color: yellow;height: 300rpx;"></view>
+    <view id="blue" class="scroll-view-item bc_blue" style="background-color: blue;height: 500rpx;"></view>
+  </scroll-view>
+
+  <view class="btn-area">
+    <button size="mini" bindtap="tap">click me to scroll into view </button>
+    <button size="mini" bindtap="tapMove">click me to scroll</button>
+  </view>
+</view>
+<view class="section section_gap">
+  <view class="section__title">horizontal scroll</view>
+  <scroll-view class="scroll-view_H" scroll-x style="width: 100%">
+    <view id="green" class="scroll-view-item_H bc_green"></view>
+    <view id="red"  class="scroll-view-item_H bc_red"></view>
+    <view id="yellow" class="scroll-view-item_H bc_yellow"></view>
+    <view id="blue" class="scroll-view-item_H bc_blue"></view>
+  </scroll-view>
+</view>
+<view>
+  <navigator url="../swiper_one/swiper_one?id=188&title=内容ss内容" open-type="navigate">
+    <image src="https://web.fujuhaofang.com/houseImg/small_fba86fef8cf2c8d091c233ce537ae738.jpg" />
+  </navigator>
+</view>

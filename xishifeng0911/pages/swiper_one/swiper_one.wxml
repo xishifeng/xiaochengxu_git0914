@@ -1,0 +1,25 @@
+<!--pages/swiper_one/swiper_one.wxml-->
+<text>pages/swiper_one/swiper_one.wxml</text>
+
+<!-- <swiper data-current="0" current="0" bindchange="itemChangeFunc" circular="true" indicator-dots="{{indicatorDots}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{indicatorActiveColor}}"
+    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{imgUrls}}" wx:key="swiperkeys">
+        <swiper-item>
+        <image src="{{item}}" class="slide-image" width="750" height="150"/>
+        </swiper-item>
+    </block>  
+</swiper> -->
+
+<swiper data-current="0" current="0" bindchange="itemChangeFunc" circular="true" indicator-dots="{{indicatorDots}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{indicatorActiveColor}}"
+    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" vertical="true">
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" />
+    </swiper-item>
+  </block>
+</swiper>
+
+<view id='box1' catchtap='getTxtInfo' data-text="aasdaf" data-num="885" data-name="xiaoming">
+  <text>这是一段内容</text>
+  <text id='text1' data-text="这是新的部分">这是新的部分</text>
+</view>

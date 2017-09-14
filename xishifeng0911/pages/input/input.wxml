@@ -1,0 +1,27 @@
+<!--pages/input/input.wxml-->
+<text>pages/input/input.wxml</text>
+<view id='form_area'>
+  <view>
+    <text>name=>text</text>
+    <input id="input1" bindchange="bindChange" type='text' placeholder="这是一个可以自动聚焦的input" auto-focus/>
+  </view>
+
+  <view>
+    <text>password=>idcard</text>
+    <input id="input2" type='idcard' placeholder="xxxxx" />
+  </view>
+
+  <view>
+    <text>password=>number</text>
+    <input id="input3" type='number' placeholder="bbbbb" confirm-type="done" />
+  </view>
+
+  <view>
+    <text>password=>digit</text>
+    <input id="input4" type='digit' placeholder="cccccc" />
+  </view>
+
+  <view>
+    <button bindtap="clickOk">确认</button>
+  </view>
+</view>

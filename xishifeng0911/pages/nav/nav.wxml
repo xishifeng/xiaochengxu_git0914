@@ -1,0 +1,15 @@
+
+
+
+
+
+
+
+
+
+
+<navigator id="backBtn" open-type="navigateBack" delta="1">返回上一页</navigator>
+<navigator url="/pages/swiper_one/swiper_one?title=sgsrgg&share=1" hover-class="none">轮播图引导页</navigator>
+<navigator url="/pages/input/input?title=sgsrgg&share=1" hover-class="none">表单提交页</navigator>
+<!-- <navigator>列表动态加载页</navigator>
+<navigator>表单提交页</navigator> -->

@@ -1,0 +1,4 @@
+/* pages/input/input.wxss */
+#form_area view input{
+  border: 1px solid #f40;
+}
