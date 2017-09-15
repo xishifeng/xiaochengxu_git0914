@@ -11,13 +11,15 @@ Page({
     index: 0
   },
   toast1Change: function (e) {
-    this.setData({ toast1Hidden: true });
+    this.setData({ 
+      toast1Hidden: true
+    });
   },
   //弹出确认框  
   modalTap: function (e) {
     this.setData({
       modalHidden: false
-    })
+    });
   },
   confirm_one: function (e) {
     console.log(e);
@@ -47,6 +49,7 @@ Page({
     })
   },
   bindPickerChange: function (e) {
+    console.log(e);
     console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       index: e.detail.value
@@ -70,8 +73,9 @@ Page({
   formSubmit: function (e) {
     var that = this;
     var formData = e.detail.value;
+    console.log(formData);
     wx.request({
-      url: 'http://test.com:8080/test/socket.php?msg=2',
+      url: 'https://web.fujuhaofang.com/mobile4.0/input_cs_one.php',
       data: formData,
       header: {
         'Content-Type': 'application/json'

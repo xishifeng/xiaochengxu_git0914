@@ -45,7 +45,7 @@ Page({
         'content-type': 'application/json' // 默认值
       },
       success: function (res) {
-
+        console.log(res);
         for(var i = 0;i<res.data.length;i++){
           _this.data.imgUrlsTemp.push(res.data[i]['imgUrl']);
         };

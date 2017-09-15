@@ -5,7 +5,9 @@
     "pages/swiper_one/swiper_one",
     "pages/nav/nav",
     "pages/input/input",
-    "pages/input_shili/input_shili"
+    "pages/input_shili/input_shili",
+    "pages/list_xuanran/list_xuanran",
+    "pages/include_shili/include_shili"
   ],
   "window": {
     "backgroundTextStyle": "light",

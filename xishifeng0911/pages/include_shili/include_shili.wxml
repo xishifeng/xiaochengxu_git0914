@@ -1,0 +1,3 @@
+<!--pages/include_shili/include_shili.wxml-->
+<text>pages/include_shili/include_shili.wxml</text>
+<view>这是一个测试的文本，可引用</view>

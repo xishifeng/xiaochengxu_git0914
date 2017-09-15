@@ -12,5 +12,6 @@
 <navigator url="/pages/swiper_one/swiper_one?title=sgsrgg&share=1" hover-class="none">轮播图引导页</navigator>
 <navigator url="/pages/input/input?title=sgsrgg&share=1" hover-class="none">表单提交页</navigator>
 <navigator url="/pages/input_shili/input_shili?title=sgsrgg&share=1" hover-class="none">表单提交示例页</navigator>
+<navigator url="/pages/list_xuanran/list_xuanran?title=sgsrgg&share=1" hover-class="none">列表渲染页</navigator>
 <!-- <navigator>列表动态加载页</navigator>
 <navigator>表单提交页</navigator> -->
