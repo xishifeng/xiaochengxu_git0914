@@ -1,9 +1,12 @@
 <!--pages/input/input.wxml-->
 <text>pages/input/input.wxml</text>
 <view id='form_area'>
+  <view id='header_title_pic'>
+    <image src="{{logoOri}}" catchtap="chooseImageTap"></image>
+  </view>
   <view>
     <text>name=>text</text>
-    <input id="input1" bindchange="bindChange" type='text' placeholder="这是一个可以自动聚焦的input" auto-focus/>
+    <input id="input1" bindinput="bindChange" type='text' placeholder="这是一个可以自动聚焦的input" auto-focus/>
   </view>
 
   <view>

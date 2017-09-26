@@ -1,0 +1,52 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": false,
+		"minified": true
+	},
+	"compileType": "weapp",
+	"libVersion": "1.5.3",
+	"appid": "wx6f4b70a9aff0ae41",
+	"projectname": "xishifeng0911",
+	"condition": {
+		"weapp": {
+			"current": 3,
+			"list": [
+				{
+					"id": -1,
+					"name": "input_cs",
+					"pathName": "pages/input_shili/input_shili",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "list_xuanran",
+					"pathName": "pages/list_xuanran/list_xuanran",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "swiper_one",
+					"pathName": "pages/swiper_one/swiper_one",
+					"query": ""
+				},
+				{
+					"id": 3,
+					"name": "input",
+					"pathName": "pages/input/input",
+					"query": ""
+				}
+			]
+		},
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		}
+	}
+}

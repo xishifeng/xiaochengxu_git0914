@@ -2,3 +2,11 @@
 #form_area view input{
   border: 1px solid #f40;
 }
+
+#header_title_pic image{
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 50%;
+  margin: 0 auto;
+  display: block;
+}

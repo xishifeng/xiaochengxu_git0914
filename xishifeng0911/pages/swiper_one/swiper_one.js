@@ -1,5 +1,5 @@
 // pages/swiper_one/swiper_one.js
-var util = require('../../utils/util.js');
+var _common = require('../../utils/util.js');
 
 
 Page({
@@ -36,7 +36,7 @@ Page({
     var _this = this;
 
     wx.request({
-      url: 'https://web.fujuhaofang.com/mobile4.0/shili0912.php', //仅为示例，并非真实的接口地址
+      url: _common.ServerHost + _common.preUrlPath + 'shili0912.php', //仅为示例，并非真实的接口地址
       data: {
         x: 'cc',
         y: 'dd'
@@ -105,9 +105,9 @@ Page({
   
   },
   getTxtInfo: function(){
-    console.log(util);
-    console.log(util.formatTime(new Date()));//调用util.js里的方法
-    console.log(util.formatNumber(8));//调用util.js里的方法
+    console.log(_common);
+    console.log(_common.formatTime(new Date()));//调用util.js里的方法
+    console.log(_common.formatNumber(8));//调用util.js里的方法
     console.log(this);//this指的是调用函数的那个对象,添加了绑定事件，则this指向dom本身。如果是对象内自身调用函数，则指向此对象
     var query = wx.createSelectorQuery();
     // query.select('#text1').boundingClientRect(function(ret){

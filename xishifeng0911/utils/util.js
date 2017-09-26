@@ -14,7 +14,12 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+const ServerHost = 'https://dev.fujuhaofang.com';
+const preUrlPath = '/mobile4.0/js/gulp_temp/';
+
 module.exports = {
   formatTime: formatTime,
-  formatNumber: formatNumber
+  formatNumber: formatNumber,
+  ServerHost: ServerHost,
+  preUrlPath: preUrlPath
 }
