@@ -105,10 +105,21 @@ Page({
   
   },
   getTxtInfo: function(){
-    console.log(_common);
     console.log(_common.formatTime(new Date()));//调用util.js里的方法
     console.log(_common.formatNumber(8));//调用util.js里的方法
-    console.log(this);//this指的是调用函数的那个对象,添加了绑定事件，则this指向dom本身。如果是对象内自身调用函数，则指向此对象
+    //获取设备信息
+    wx.getSystemInfo({
+      success: function (res) {
+        console.log(res);
+      }
+    });
+    //调用扫一扫功能
+    wx.scanCode({
+      success: (res) => {
+        console.log(res);
+      }
+    });
+    //获取节点元素信息
     var query = wx.createSelectorQuery();
     // query.select('#text1').boundingClientRect(function(ret){
     //   console.log(ret);
