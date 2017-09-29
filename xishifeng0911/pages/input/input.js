@@ -1,5 +1,5 @@
 // pages/input/input.js
-const _common = require('../../utils/util.js');
+const _util = require('../../utils/util.js');
 Page({
 
   /**
@@ -14,12 +14,12 @@ Page({
     console.log(this.data.inputContent);
   },
   clickOk: function(){
-    console.log(_common.ServerHost);
-    console.log(_common.preUrlPath);
+    console.log(_util.ServerHostDev);
+    console.log(_util.preUrlPath);
     var _this = this;
     _this.callBackClickOk(function(e){
       wx.request({
-        url: _common.ServerHost + _common.preUrlPath + 'input_cs_one.php', //仅为示例，并非真实的接口地址
+        url: _util.ServerHostDev + _util.preUrlPath + 'input_cs_one.php', //仅为示例，并非真实的接口地址
         method: 'POST',
         dataType: 'json',
         data: _this.data.inputContent,

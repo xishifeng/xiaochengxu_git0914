@@ -1,5 +1,5 @@
 // pages/swiper_one/swiper_one.js
-var _common = require('../../utils/util.js');
+var _util = require('../../utils/util.js');
 
 
 Page({
@@ -9,14 +9,16 @@ Page({
    */
   data: {
     imgUrls: [],
-    imgUrlsTemp: [],
     indicatorDots: true,
     indicatorColor: 'white',
     indicatorActiveColor: 'yellow',
     autoplay: true,
     interval: 3000,
     duration: 1000,
-    current: 1
+    current: 1,
+    mainList: [],
+    mainListTemp: [],
+    mainListImgPre: _util.ServerHostAdmin + '/houseImg/'
   },
 
   durationChange: function (e) {
@@ -36,7 +38,7 @@ Page({
     var _this = this;
 
     wx.request({
-      url: _common.ServerHost + _common.preUrlPath + 'shili0912.php', //仅为示例，并非真实的接口地址
+      url: _util.ServerHostDev + _util.preUrlPath + 'shili0912.php', //仅为示例，并非真实的接口地址
       data: {
         x: 'cc',
         y: 'dd'
@@ -46,14 +48,48 @@ Page({
       },
       success: function (res) {
         console.log(res);
+        var _tempArr = [];
         for(var i = 0;i<res.data.length;i++){
-          _this.data.imgUrlsTemp.push(res.data[i]['imgUrl']);
+          _tempArr.push(res.data[i]['imgUrl']);
         };
         _this.setData({
-          'imgUrls': _this.data.imgUrlsTemp
+          'imgUrls': _tempArr
         });
       }
     });
+    _this.loadMain(0);
+    
+  },
+
+  loadMain: function (pageNum) {
+    var _this = this;
+    wx.request({
+      url: _util.ServerHostAdmin + '/news/listwnewsinfo/' + pageNum, //仅为示例，并非真实的接口地址
+      data: {
+        x: 'cc',
+        y: 'dd'
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success: function (res) {
+        console.log(res);
+        for (var i = 0; i < res.data.length; i++) {
+          var _dataTemp = res.data[i]['News'];
+          _dataTemp['mainListImgPre'] = _this.data.mainListImgPre;
+          _this.data.mainListTemp.push(_dataTemp);
+        };
+        _this.setData({
+          'mainList': _this.data.mainListTemp
+        });
+        console.log(_this.data.mainList.length);
+      }
+    });
+  },
+
+  aa:function(){
+    console.log(11999);
+    this.loadMain(3);
   },
 
   /**
@@ -88,14 +124,14 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+    
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    this.loadMain(1);
   },
 
   /**
@@ -105,8 +141,8 @@ Page({
   
   },
   getTxtInfo: function(){
-    console.log(_common.formatTime(new Date()));//调用util.js里的方法
-    console.log(_common.formatNumber(8));//调用util.js里的方法
+    console.log(_util.formatTime(new Date()));//调用util.js里的方法
+    console.log(_util.formatNumber(8));//调用util.js里的方法
     //获取设备信息
     wx.getSystemInfo({
       success: function (res) {

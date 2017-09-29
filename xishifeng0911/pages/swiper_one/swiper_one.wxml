@@ -19,7 +19,32 @@
   </block>
 </swiper>
 
+<template name="template1">
+  <navigator>
+    <view>
+      <view>
+        <text>{{title}}</text>
+        <text></text>
+      </view>
+      <image src="{{mainListImgPre}}{{icon}}"></image> 
+    </view>
+  </navigator>
+</template>
+
 <view id='box1' catchtap='getTxtInfo' data-text="aasdaf" data-num="885" data-name="xiaoming">
   <text>这是一段内容</text>
   <text id='text1' data-text="这是新的部分">这是新的部分</text>
 </view>
+
+
+<!-- <scroll-view scroll-y="true" bindscrolltolower="aa">
+  <block wx:for="{{mainList}}">
+      <template is="template1" data="{{...item}}"/>
+  </block>
+</scroll-view> -->
+<scroll>
+  <block wx:for="{{mainList}}">
+      <template is="template1" data="{{...item}}"/>
+  </block>
+</scroll>
+<!--参考网址http://blog.csdn.net/michael_ouyang/article/details/56846185  -->
