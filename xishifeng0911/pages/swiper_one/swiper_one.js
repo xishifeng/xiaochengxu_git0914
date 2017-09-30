@@ -18,6 +18,7 @@ Page({
     current: 1,
     mainList: [],
     mainListTemp: [],
+    mainListPage: 0,
     mainListImgPre: _util.ServerHostAdmin + '/houseImg/'
   },
 
@@ -73,23 +74,20 @@ Page({
         'content-type': 'application/json' // 默认值
       },
       success: function (res) {
-        console.log(res);
         for (var i = 0; i < res.data.length; i++) {
           var _dataTemp = res.data[i]['News'];
           _dataTemp['mainListImgPre'] = _this.data.mainListImgPre;
           _this.data.mainListTemp.push(_dataTemp);
         };
+        console.log(_this.data.mainListPage);
         _this.setData({
-          'mainList': _this.data.mainListTemp
+          'mainList': _this.data.mainListTemp,
+          'mainListPage': _this.data.mainListPage + 1
         });
+        
         console.log(_this.data.mainList.length);
       }
     });
-  },
-
-  aa:function(){
-    console.log(11999);
-    this.loadMain(3);
   },
 
   /**
@@ -131,7 +129,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    this.loadMain(1);
+    this.loadMain(this.data.mainListPage);
   },
 
   /**
